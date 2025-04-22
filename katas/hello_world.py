@@ -2,6 +2,7 @@ def hello_world():
     """
     Returns the string "hello world".
     """
+    return "hello word"
 
 
 if __name__ == '__main__':
