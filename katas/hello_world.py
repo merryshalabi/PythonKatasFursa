@@ -2,7 +2,7 @@ def hello_world():
     """
     Returns the string "hello world".
     """
-    return "hello word"
+    return "hello world"
 
 
 
