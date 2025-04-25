@@ -8,6 +8,16 @@ def is_unique(string):
     Returns:
         True if all characters are unique, False otherwise
     """
+    alphabet_counter = [0] * 26
+    for letter in string:
+        letter = letter.lower()
+        if not letter.isalpha():
+            continue
+        index = ord(letter) - ord('a')
+        if alphabet_counter[index] :
+             return False
+        alphabet_counter[index]+=1
+
     return True
 
 
