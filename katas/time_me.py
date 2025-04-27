@@ -12,7 +12,10 @@ def measure_execution_time(func):
         the execution time in milliseconds
     """
     # hint: time.time()
-    return 0
+    start = time.time()
+    func()
+    end = time.time()
+    return end - start
 
 
 def sample_function():
