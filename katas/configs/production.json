@@ -1,0 +1,17 @@
+{
+  "app": {
+    "debug": false
+  },
+  "database": {
+    "host": "prod.db.internal",
+    "username": "prod_user",
+    "password": "prod_secret"
+  },
+  "logging": {
+    "level": "WARNING"
+  },
+  "security": {
+    "enable_https": true,
+    "cors": ["https://myapp.com"]
+  }
+}

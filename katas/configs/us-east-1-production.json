@@ -1,0 +1,12 @@
+{
+  "database": {
+    "host": "us-east-1.db.prod.internal"
+  },
+  "logging": {
+    "level": "ERROR"
+  },
+  "security": {
+    "cors": ["https://us.myapp.com"]
+  },
+  "region": "us-east-1"
+}
