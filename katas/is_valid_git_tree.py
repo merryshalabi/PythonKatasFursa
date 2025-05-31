@@ -1,3 +1,7 @@
+from itertools import cycle
+from os import MFD_ALLOW_SEALING
+
+
 def is_valid_git_tree(tree_map):
     """
     Determines if a given tree structure represents a valid Git tree.
@@ -12,7 +16,44 @@ def is_valid_git_tree(tree_map):
     Returns:
         True if the tree is a valid Git tree, False otherwise
     """
-    return False
+    all_nodes = set(tree_map.keys())
+    all_child_nodes = set()
+
+    for children in tree_map.values():
+        for child in children:
+            all_child_nodes.add(child)
+
+    root = all_nodes - all_child_nodes
+    if len(root) != 1 :
+        return False
+
+    start = root.pop()
+
+    global_visited = set()
+
+    def dfs(node,visited):
+        if node in visited:
+            return False
+        if node in global_visited:
+            return True
+        visited.add(node)
+
+        for child in tree_map.get(node,[]):
+            if child in visited:
+                return False
+            else:
+                dfs(node,visited)
+
+        visited.remove(node)
+        global_visited.add(node)
+        return True
+
+    visited = set()
+    if not dfs(start,visited):
+        return False
+
+
+    return True
 
 
 if __name__ == '__main__':

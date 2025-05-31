@@ -1,0 +1,14 @@
+{
+  "user": {
+    "name": "John",
+    "age": 30,
+    "preferences": {
+      "theme": "light",
+      "notifications": true
+    }
+  },
+  "settings": {
+    "language": "english",
+    "timezone": "UTC"
+  }
+}

@@ -10,7 +10,18 @@ def max_profit(prices):
     Returns:
         the maximum profit, or 0 if no profit can be achieved
     """
-    return 0
+    if not prices:
+        return 0
+
+    min_price = prices[0]
+    max_profit = 0
+
+    for price in prices[1:]:
+        profit = price - min_price
+        max_profit = max(max_profit, profit)
+        min_price = min(min_price, price)
+
+    return max_profit
 
 
 if __name__ == '__main__':

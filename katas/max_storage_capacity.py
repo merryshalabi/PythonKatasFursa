@@ -21,7 +21,34 @@ def max_storage_area(containers: List[int]) -> int:
     Returns:
         The area of the largest rectangle formed between containers
     """
-    return 0
+    containers = containers.copy()
+    containers.append(0)
+
+    stack = []
+    max_area = 0
+
+    for i in range(len(containers)):
+        current_height = containers[i]
+
+
+        while stack and containers[stack[-1]] > current_height:
+            top_index = stack.pop()
+            height = containers[top_index]
+
+
+            if not stack:
+                width = i
+            else:
+                width = i - stack[-1] - 1
+
+            area = height * width
+            max_area = max(max_area, area)
+
+
+        stack.append(i)
+
+    return max_area
+
 
 
 if __name__ == "__main__":

@@ -1,0 +1,15 @@
+{
+  "user": {
+    "age": 31,
+    "email": "john@example.com",
+    "preferences": {
+      "notifications": false
+    }
+  },
+  "settings": {
+    "timezone": "UTC+1",
+    "performance": {
+      "cache": true
+    }
+  }
+}

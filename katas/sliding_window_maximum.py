@@ -1,3 +1,6 @@
+from collections import deque
+
+
 def max_sliding_window(nums, k):
     """
     Given an array of integers and a sliding window size, your task is to find the maximum value
@@ -22,7 +25,20 @@ def max_sliding_window(nums, k):
     Returns:
         A list of the maximum values in each window
     """
-    return []
+    if k==0 or not nums :
+        return []
+    result = []
+    dq = deque()
+    for i in range(len(nums)):
+        if dq and dq[0] < i-k+1:
+            dq.popleft()
+        while dq and nums[dq[-1]] < nums[i] :
+            dq.pop()
+        dq.append(i)
+        if i >= k-1 :
+            result.append(nums[dq[0]])
+
+    return result
 
 
 if __name__ == '__main__':

@@ -1,0 +1,15 @@
+{
+  "user": {
+    "preferences": {
+      "theme": "dark",
+      "language": "spanish"
+    }
+  },
+  "settings": {
+    "region": "us-east-1",
+    "performance": {
+      "cache": false,
+      "cdn": "enabled"
+    }
+  }
+}
